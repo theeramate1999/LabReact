@@ -5,9 +5,10 @@ export default function CharacterCard(props) {
     const [active, setActive] = useState(false);
     const attemptRef = useRef(props.attempt);
     const activate = () => {
-    setActive(true)
+          setActive(true)
         if(!active){
              setActive(true)
+             
              props.activationHandler(props.value)
         }
  }
