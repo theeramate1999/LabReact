@@ -9,6 +9,9 @@ import ans3 from './Image/ans3.jpg';
 var word;
 var image;
 var numRan = Math.floor(Math.random() * 3)+1;
+function refreshPage(){ 
+  window.location.reload(); 
+}
 switch(numRan){
 
 case 1:word = "Thailand";
@@ -26,7 +29,7 @@ function App() {
  <div> 
    <h1><center>React Game</center></h1>
    <center><WordCard value={word}/></center>
-   <center><botton> <a href="http://localhost:3000/"> Next </a> </botton> </center>
+   <center><button type="button" onClick={ refreshPage }> <span>Next</span> </button> </center>
    <center><img src={image}/></center>
 </div>
  );
