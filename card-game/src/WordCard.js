@@ -2,13 +2,14 @@ import React, {useState} from 'react';
 import _, { attempt } from 'lodash' ;
 import CharacterCard from './CharacterCard';
 var ans;
+var temp;
 const prepareStateFromWord = (given_word) => {
     let word = given_word.toUpperCase()
     let chars = _.shuffle(Array.from(word))
     return {
     word,
     chars,
-    attempt: 1,
+    attempt: 0,
     guess: '',
     completed: false
       }
@@ -18,6 +19,7 @@ export default function WordCard(props){
     
     const [state, setState] = useState(prepareStateFromWord(props.value))
     ans = state.guess;
+    temp = state.attempt;
     const activationHandler = (c) => {
 
         console.log(`${c} has been activated.`)
@@ -33,10 +35,11 @@ export default function WordCard(props){
 
                 }else{
                      console.log('reset')
-                     setState({...state, guess: '', attempt: state.attempt + 1})
+                     state.attempt += 1;
+                     setState({...state, guess: '', attempt: state.attempt})
                      }
                  }
-         
+        
         }
        
     
@@ -49,7 +52,8 @@ export default function WordCard(props){
                     <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt = {state.attempt}/>
                 )
                  
-              }           
+              }  
+              <div className= "temp">Round:{temp} </div>         
         </div>
     )
 }
