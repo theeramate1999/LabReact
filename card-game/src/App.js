@@ -2,17 +2,32 @@ import React from 'react';
 import './App.css';
 import WordCard from './WordCard';
 
+import ans1 from './Image/ans1.jpg';
+import ans2 from './Image/ans2.jpg';
+import ans3 from './Image/ans3.jpg';
 
-const word = "Hello";
-const word2 = "Prayut";
-const number = Math.floor(Math.random() * 10);
+var word;
+var image;
+var numRan = Math.floor(Math.random() * 3)+1;
+switch(numRan){
+
+case 1:word = "Thailand";
+       image = ans1;
+       break;
+case 2:word = "Japan";
+       image = ans2;
+       break;
+case 3:word = "SouthKorea";
+       image = ans3;
+       break;
+}
 function App() {
  return (
  <div> 
    <h1><center>React Game</center></h1>
-   <p><tr>hint! : computer Engineering use to print after learn new language</tr></p>
-   <WordCard value={word}/>
-   <WordCard value={word2}/>
+   <center><WordCard value={word}/></center>
+   <center><botton> <a href="http://localhost:3000/"> Next </a> </botton> </center>
+   <center><img src={image}/></center>
 </div>
  );
 }

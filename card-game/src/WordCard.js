@@ -37,7 +37,7 @@ export default function WordCard(props){
     
     return (
         <div>
-             <a href="http://localhost:3000/"><botton>Reset</botton></a>
+             
              {
                  
                 state.chars.map((c , i)=> 
