@@ -18,7 +18,7 @@ var word;
 var image;
 var numRan = Math.floor(Math.random() * 10)+1;
 function refreshPage(){ 
-  window.location.reload(); 
+  window.location.reload();
 }
 switch(numRan){
 
@@ -55,12 +55,20 @@ case 10:word = "India";
 }
 function App() {
  return (
+  
+  <body>
  <div> 
-   <h1><center>React Game</center></h1>
+   
+   <center><div className= "h2">React GameQuiz</div></center>
    <center><WordCard value={word}/></center>
    <center><button type="button" onClick={ refreshPage }> <span>Next</span> </button> </center>
    <center><img src={image}/></center>
-</div>
+  
+ 
+   
+  </div>
+  </body>
+
  );
 }
 export default App;

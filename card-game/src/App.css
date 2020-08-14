@@ -6,6 +6,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     margin: 1em;
     user-select: none;
+    background: white ;
    }
 
 .activeCard{
@@ -20,4 +21,11 @@
 .temp{
     color:black;
     font-size: 3em;
+}
+.h2{
+    color: black;
+    font-size: 7em;
+}
+body{
+    background-color: bisque;
 }
